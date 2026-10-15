@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d0kn15wbc6ftb"]
+
+[ext_resource type="Script" uid="uid://c3bwhr5j0dmw6" path="res://scripts/chase.gd" id="1_sfjuf"]
+[ext_resource type="Texture2D" uid="uid://dhd481bq3i83m" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost1.png" id="2_pbs4w"]
+[ext_resource type="Texture2D" uid="uid://df0lv83k7x27h" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost2.png" id="3_pfo06"]
+[ext_resource type="Texture2D" uid="uid://blkjaim637r2b" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost3.png" id="4_x87yy"]
+[ext_resource type="Texture2D" uid="uid://cnb5pvgm3r5i2" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost4.png" id="5_aeprp"]
+[ext_resource type="PackedScene" uid="uid://didjxkm2hih83" path="res://scenes/killzone.tscn" id="6_pfo06"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wsfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pbs4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pfo06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x87yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aeprp")
+}],
+"loop": 1,
+"name": &"ghost",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfo06"]
+size = Vector2(27, 38)
+
+[node name="chase" type="Node2D" unique_id=558569626]
+script = ExtResource("1_sfjuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687505310]
+sprite_frames = SubResource("SpriteFrames_8wsfc")
+animation = &"ghost"
+frame_progress = 0.23689045
+flip_h = true
+
+[node name="killzone" parent="." unique_id=1663699464 instance=ExtResource("6_pfo06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=958815623]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_pfo06")

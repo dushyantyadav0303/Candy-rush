@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c6wofp2b70s54"]
+
+[ext_resource type="Script" uid="uid://cynomrhdvrs16" path="res://scripts/vampire.gd" id="1_anhdl"]
+[ext_resource type="Texture2D" uid="uid://cd15sqjgpiije" path="res://assets/Halloween Characters/Vampire/Png_animation/Vampire1.png" id="2_anhdl"]
+[ext_resource type="Texture2D" uid="uid://dylttpn68u6kh" path="res://assets/Halloween Characters/Vampire/Png_animation/Vampire2.png" id="3_tqr1q"]
+[ext_resource type="Texture2D" uid="uid://b7lk3cxuxeqds" path="res://assets/Halloween Characters/Vampire/Png_animation/Vampire3.png" id="4_07dva"]
+[ext_resource type="PackedScene" uid="uid://didjxkm2hih83" path="res://scenes/killzone.tscn" id="5_3flfw"]
+[ext_resource type="Texture2D" uid="uid://e7tstb32lbju" path="res://assets/Halloween Characters/Vampire/Png_animation/Vampire4.png" id="5_k3cwa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ap6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_anhdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tqr1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_07dva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k3cwa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g13lv"]
+size = Vector2(29.320755, 44.28572)
+
+[node name="Vampire" type="Node2D" unique_id=110414867]
+script = ExtResource("1_anhdl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1558232270]
+sprite_frames = SubResource("SpriteFrames_1ap6k")
+autoplay = "default"
+frame_progress = 0.15582862
+
+[node name="killzone" parent="." unique_id=1663699464 instance=ExtResource("5_3flfw")]
+position = Vector2(-5.25, -6.75)
+scale = Vector2(0.7162162, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=351618204]
+position = Vector2(5.9339623, 11.071428)
+scale = Vector2(1, 0.9999996)
+shape = SubResource("RectangleShape2D_g13lv")
+
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=1498521585]
+position = Vector2(0, 9)
+target_position = Vector2(6, 0)
+
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=625067302]
+position = Vector2(0, 9)
+target_position = Vector2(-9, 0)

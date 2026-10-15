@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d37ikftcb41t"]
+
+[ext_resource type="Script" uid="uid://bx5mjxvdy1148" path="res://scripts/ghost.gd" id="1_lv6vd"]
+[ext_resource type="Texture2D" uid="uid://dhd481bq3i83m" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost1.png" id="1_veat2"]
+[ext_resource type="Texture2D" uid="uid://df0lv83k7x27h" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost2.png" id="2_5mfnq"]
+[ext_resource type="Texture2D" uid="uid://blkjaim637r2b" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost3.png" id="3_lv6vd"]
+[ext_resource type="Texture2D" uid="uid://cnb5pvgm3r5i2" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost4.png" id="4_sv5gc"]
+[ext_resource type="PackedScene" uid="uid://didjxkm2hih83" path="res://scenes/killzone.tscn" id="5_5mfnq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g13lv"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_veat2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5mfnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lv6vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sv5gc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g13lv"]
+size = Vector2(29.320755, 44.28572)
+
+[node name="ghost" type="Node2D" unique_id=110414867]
+script = ExtResource("1_lv6vd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095425171]
+position = Vector2(-5.25, -6.75)
+scale = Vector2(0.7162162, 0.7)
+sprite_frames = SubResource("SpriteFrames_g13lv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5092339
+
+[node name="killzone" parent="." unique_id=1663699464 instance=ExtResource("5_5mfnq")]
+position = Vector2(-5.25, -6.75)
+scale = Vector2(0.7162162, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=351618204]
+position = Vector2(-0.34905577, 2.5)
+scale = Vector2(1, 0.9999996)
+shape = SubResource("RectangleShape2D_g13lv")

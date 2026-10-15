@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://8ti6wc4yofa5"]
+
+[ext_resource type="Script" uid="uid://bx5mjxvdy1148" path="res://scripts/ghost.gd" id="1_5fn3r"]
+[ext_resource type="Texture2D" uid="uid://dtxoxo7nfvf5f" path="res://assets/Halloween Characters/Bat/Png_animation/Bat1.png" id="2_5fn3r"]
+[ext_resource type="Texture2D" uid="uid://rm3bmckvq515" path="res://assets/Halloween Characters/Bat/Png_animation/Bat2.png" id="3_8qtcx"]
+[ext_resource type="Texture2D" uid="uid://udekfmjvoeqn" path="res://assets/Halloween Characters/Bat/Png_animation/Bat3.png" id="4_x4bhu"]
+[ext_resource type="Texture2D" uid="uid://cjdkcoffuqg0p" path="res://assets/Halloween Characters/Bat/Png_animation/Bat4.png" id="5_k0o7o"]
+[ext_resource type="PackedScene" uid="uid://didjxkm2hih83" path="res://scenes/killzone.tscn" id="6_p5otw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g13lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5fn3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qtcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x4bhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k0o7o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g13lv"]
+size = Vector2(30.01887, 31.428585)
+
+[node name="BAT" type="Node2D" unique_id=110414867]
+script = ExtResource("1_5fn3r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095425171]
+position = Vector2(-5.25, -6.75)
+scale = Vector2(0.7162162, 0.7)
+sprite_frames = SubResource("SpriteFrames_g13lv")
+autoplay = "default"
+flip_h = true
+
+[node name="killzone" parent="." unique_id=1663699464 instance=ExtResource("6_p5otw")]
+position = Vector2(-5.25, -6.75)
+scale = Vector2(0.7162162, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=351618204]
+position = Vector2(0.69811344, -7.499996)
+scale = Vector2(1, 0.9999994)
+shape = SubResource("RectangleShape2D_g13lv")
+
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=1498521585]
+position = Vector2(1, 1)
+target_position = Vector2(3, -1)
+
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=625067302]
+target_position = Vector2(-15, 0)

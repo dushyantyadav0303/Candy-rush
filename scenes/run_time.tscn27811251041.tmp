@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cvd38o8iwk1ck"]
+
+[ext_resource type="Script" uid="uid://cthdkmjqw3ent" path="res://scripts/run_time.gd" id="1_hyiox"]
+[ext_resource type="Texture2D" uid="uid://sr0xigsfdv2n" path="res://assets/Fleshbound_free_v1.0/Tilesets/DarkCastleTileset/$EvilGate_300%.png" id="2_s0yke"]
+[ext_resource type="FontFile" uid="uid://ox7nt2qehmpf" path="res://font/SomethingStrange-vjYD.ttf" id="3_a46ni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgdoh"]
+size = Vector2(43, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a46ni"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cetsr"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3xn5"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odxsb"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(0, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhixr"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(144, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grwu0"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(288, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ym4u"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(0, 288, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yg10"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(144, 288, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbhta"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(288, 288, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgap5"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(0, 432, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyxrx"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(144, 432, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuxvs"]
+atlas = ExtResource("2_s0yke")
+region = Rect2(288, 432, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hyiox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a46ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cetsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3xn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odxsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhixr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grwu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ym4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yg10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbhta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgap5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyxrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuxvs")
+}],
+"loop": 0,
+"name": &"gate",
+"speed": 7.0
+}]
+
+[node name="runTime" type="Area2D" unique_id=887528923]
+script = ExtResource("1_hyiox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1720570449]
+visible = false
+position = Vector2(11.5, -5.5)
+shape = SubResource("RectangleShape2D_fgdoh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1159991470]
+position = Vector2(-89.312485, -53.25)
+scale = Vector2(1.1901042, 0.982639)
+sprite_frames = SubResource("SpriteFrames_hyiox")
+animation = &"gate"
+frame = 2
+frame_progress = 0.05246614
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1486946264]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=805677471]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GraphNodeTitleLabel"
+theme_override_colors/font_color = Color(0.5898064, 1.540184e-06, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("3_a46ni")
+theme_override_font_sizes/font_size = 120
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

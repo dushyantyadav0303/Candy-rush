@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://uqvxf4i2di5i"]
+
+[ext_resource type="AudioStream" uid="uid://bacxqmtvmwl16" path="res://assets/kiravale-horror-music-593677.mp3" id="1_1udxr"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1769715756]
+stream = ExtResource("1_1udxr")
+autoplay = true
+bus = &"music"

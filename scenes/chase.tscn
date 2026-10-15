@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://d0kn15wbc6ftb"]
+
+[ext_resource type="Script" uid="uid://c3bwhr5j0dmw6" path="res://scripts/chase.gd" id="1_sfjuf"]
+[ext_resource type="Texture2D" uid="uid://dhd481bq3i83m" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost1.png" id="2_pbs4w"]
+[ext_resource type="Texture2D" uid="uid://df0lv83k7x27h" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost2.png" id="3_pfo06"]
+[ext_resource type="Texture2D" uid="uid://blkjaim637r2b" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost3.png" id="4_x87yy"]
+[ext_resource type="Texture2D" uid="uid://cnb5pvgm3r5i2" path="res://assets/Halloween Characters/Ghost/Png_animation/Ghost4.png" id="5_aeprp"]
+[ext_resource type="PackedScene" uid="uid://didjxkm2hih83" path="res://scenes/killzone.tscn" id="6_pfo06"]
+[ext_resource type="Texture2D" uid="uid://m76d7fk7vm6d" path="res://assets/Halloween Characters/Witch/Png_animation/Witch1.png" id="7_gp4q1"]
+[ext_resource type="Texture2D" uid="uid://1bktjtwtcmut" path="res://assets/Halloween Characters/Witch/Png_animation/Witch2.png" id="8_sddb1"]
+[ext_resource type="Texture2D" uid="uid://c8y2gqtmbf74a" path="res://assets/Halloween Characters/Witch/Png_animation/Witch3.png" id="9_sdffe"]
+[ext_resource type="Texture2D" uid="uid://k3jaagj685ln" path="res://assets/Halloween Characters/Witch/Png_animation/Witch4.png" id="10_osxpf"]
+[ext_resource type="Texture2D" uid="uid://dk5qgy120opf" path="res://assets/Halloween Characters/jack o lantern/Png_animation/Jack o latern1.png" id="11_kvask"]
+[ext_resource type="Texture2D" uid="uid://03jnixdotme0" path="res://assets/Halloween Characters/jack o lantern/Png_animation/Jack o latern2.png" id="12_78324"]
+[ext_resource type="Texture2D" uid="uid://dth65eaokkdo1" path="res://assets/Halloween Characters/jack o lantern/Png_animation/Jack o latern3.png" id="13_wxiy5"]
+[ext_resource type="Texture2D" uid="uid://7yfpqssc78kj" path="res://assets/Halloween Characters/jack o lantern/Png_animation/Jack o latern4.png" id="14_lagq3"]
+[ext_resource type="Texture2D" uid="uid://dtxoxo7nfvf5f" path="res://assets/Halloween Characters/Bat/Png_animation/Bat1.png" id="15_yc8wa"]
+[ext_resource type="Texture2D" uid="uid://rm3bmckvq515" path="res://assets/Halloween Characters/Bat/Png_animation/Bat2.png" id="16_hdmhx"]
+[ext_resource type="Texture2D" uid="uid://udekfmjvoeqn" path="res://assets/Halloween Characters/Bat/Png_animation/Bat3.png" id="17_xnkaj"]
+[ext_resource type="Texture2D" uid="uid://cjdkcoffuqg0p" path="res://assets/Halloween Characters/Bat/Png_animation/Bat4.png" id="18_prk5u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wsfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pbs4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pfo06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x87yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aeprp")
+}],
+"loop": 1,
+"name": &"ghost",
+"speed": 13.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfo06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gp4q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sddb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sdffe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_osxpf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g13lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_kvask")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_78324")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wxiy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lagq3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0vl4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_yc8wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hdmhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xnkaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_prk5u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfo06"]
+size = Vector2(32.25, 31)
+
+[node name="chase" type="Node2D" unique_id=558569626]
+script = ExtResource("1_sfjuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687505310]
+position = Vector2(28, 4)
+sprite_frames = SubResource("SpriteFrames_8wsfc")
+animation = &"ghost"
+autoplay = "ghost"
+frame_progress = 0.5640901
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1516474575]
+position = Vector2(43, -58)
+sprite_frames = SubResource("SpriteFrames_pfo06")
+autoplay = "default"
+frame_progress = 0.9230197
+flip_h = true
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=348264444]
+position = Vector2(-17, 0)
+sprite_frames = SubResource("SpriteFrames_g13lv")
+autoplay = "default"
+frame_progress = 0.99237275
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=395171602]
+position = Vector2(53, -113)
+sprite_frames = SubResource("SpriteFrames_d0vl4")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="." unique_id=744962751]
+position = Vector2(-26, -143)
+sprite_frames = SubResource("SpriteFrames_d0vl4")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1676913956]
+position = Vector2(1, -88)
+sprite_frames = SubResource("SpriteFrames_d0vl4")
+autoplay = "default"
+flip_h = true
+
+[node name="killzone2" parent="." unique_id=618285347 instance=ExtResource("6_pfo06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2" unique_id=778263057]
+position = Vector2(-17, 2)
+shape = SubResource("RectangleShape2D_pfo06")
+
+[node name="killzone3" parent="." unique_id=1688657932 instance=ExtResource("6_pfo06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone3" unique_id=2085726026]
+position = Vector2(48.75, -53)
+shape = SubResource("RectangleShape2D_pfo06")
+
+[node name="killzone4" parent="." unique_id=158135635 instance=ExtResource("6_pfo06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone4" unique_id=498398612]
+position = Vector2(53.875, -120.5)
+shape = SubResource("RectangleShape2D_pfo06")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone4" unique_id=1300850220]
+position = Vector2(2, -95)
+shape = SubResource("RectangleShape2D_pfo06")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="killzone4" unique_id=460390388]
+position = Vector2(-26, -151)
+shape = SubResource("RectangleShape2D_pfo06")
+
+[node name="killzone" parent="." unique_id=1663699464 instance=ExtResource("6_pfo06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=958815623]
+position = Vector2(32, 4)
+shape = SubResource("RectangleShape2D_pfo06")

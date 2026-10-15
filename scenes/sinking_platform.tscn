@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dymfi2kdpeq5p"]
+
+[ext_resource type="Script" uid="uid://de0brhwloobee" path="res://scripts/sinking_platform.gd" id="1_nbhxs"]
+[ext_resource type="Texture2D" uid="uid://ca8qb1kw757ts" path="res://assets/Fleshbound_Platform.png" id="2_nbhxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7yo5"]
+size = Vector2(32, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbhxs"]
+size = Vector2(32, 1)
+
+[node name="SinkingPlatform" type="AnimatableBody2D" unique_id=2002393993]
+script = ExtResource("1_nbhxs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=695738761]
+texture = ExtResource("2_nbhxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=934582180]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_w7yo5")
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=1867344275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1893643322]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_nbhxs")
