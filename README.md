@@ -2,7 +2,6 @@
 It is a 2d side scrolling Halloween theme game. in which you have to collect candy while Avoiding from ghost.
 
 ### Public link: https://dushyantyadav0303.itch.io/candy-rush
-### demo video: 
 ---
 #  tech stack 
  Build in Godot 
